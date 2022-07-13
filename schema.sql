@@ -46,9 +46,6 @@ COMMIT;
 BEGIN; 
 
 ALTER TABLE animals
-DROP COLUMN species;
-
-ALTER TABLE animals
 ADD species_id INT;
 
 ALTER TABLE animals
