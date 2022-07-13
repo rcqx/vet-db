@@ -39,4 +39,56 @@ INSERT INTO species(name) VALUES('Digimon');
 
 COMMIT;
 
+--Update animals types id
+-- Digimon type
+BEGIN;
+
+UPDATE animals
+SET species_id = 1
+WHERE name LIKE '%mon%';
+
+COMMIT;
+
+-- Pokemon type
+BEGIN;
+
+UPDATE animals
+SET species_id = 1
+WHERE species_id IS NULL;
+
+COMMIT;
+
+--Upate owners ids in animals table
+BEGIN;
+--Update owners data in animal table
+-- Sam smith
+UPDATE animals
+SET owner_id = 1
+WHERE name = 'Agumon';
+
+-- Jennifer Orwell
+UPDATE animals
+SET owner_id = 2
+WHERE name IN ('Gabumon', 'Pikachu');
+
+-- Bob
+UPDATE animals
+SET owner_id = 3
+WHERE name IN ('Devimon', 'Plantmon');
+
+-- Melody Pond
+UPDATE animals
+SET owner_id = 4
+WHERE name IN ('Charmander', 'Squirtle', 'Blossom');
+
+-- Dean Wincheser
+UPDATE animals
+SET owner_id = 5
+WHERE name IN ('Angemon', 'Boarmon');
+
+COMMIT;
+
+
+
+
 
