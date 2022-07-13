@@ -1,4 +1,4 @@
-# A vet clinic database: Query and Update animals table 💾
+# A vet clinic database: Querying multiple tables 💾
 
 > Creating a database for a vet clinic
 

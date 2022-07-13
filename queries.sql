@@ -77,6 +77,45 @@ GROUP BY species;
 -- Result is 3 as, squirtle and blossom are the only animals that match the WHERE clause range
 -- 3 + 3 / 2 = 6
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------3rd DAY QUERIES BELOW!----------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
 
+-- What animals belong to Melody Pond?
+SELECT name, full_name
+FROM animals a JOIN owners o ON a.owner_id = o.id
+WHERE full_name = 'Melody Pond';
+
+-- List of all animals that are pokemon (their type is Pokemon).
+SELECT a.name AS name, s.name AS anima_type
+FROM animals a JOIN species s ON a.species_id = s.id
+WHERE s.name = 'Pokemon';
+
+-- List all owners and their animals, remember to include those that don't own any animal.
+SELECT o.id, full_name, a.name AS pet_name
+FROM owners o LEFT JOIN animals a ON o.id = a.owner_id;
+
+-- How many animals are there per species?
+SELECT s.name, COUNT(*)
+FROM species s JOIN animals a ON s.id = a.species_id
+GROUP BY s.name;
+
+-- List all Digimon owned by Jennifer Orwell.
+SELECT a.name, o.full_name
+FROM animals a JOIN owners o ON a.owner_id = o.id
+WHERE o.full_name = 'Jennifer Orwell';
+
+-- List all animals owned by Dean Winchester that haven't tried to escape.
+SELECT a.name, a.escape_attempts, o.full_name, o.id
+FROM animals a JOIN owners o ON o.id = a.owner_id
+WHERE o.full_name = 'Dean Winchester';
+-- AND a.escape_attempts = 0; <--- Both animals have tried to escape at least once so result is an empty table.
+
+-- Who owns the most animals?
+SELECT o.full_name, COUNT(*) as total_animals
+FROM animals a JOIN owners o ON a.owner_id = o.id
+GROUP BY o.full_name
+ORDER BY total_animals DESC
+LIMIT 1;
 
 
