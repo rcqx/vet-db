@@ -53,6 +53,29 @@ ADD owner_id INT;
 
 COMMIT;
 
+-- Create vets table
+CREATE TABLE vets(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    date_of_graduation DATE
+);
+
+-- Create specialization table
+CREATE TABLE specializations(
+    vet_id INT,
+    species_id INT,
+    PRIMARY KEY (vet_id, species_id)
+);
+
+-- Create visits table
+CREATE TABLE visits(
+    vet_id INT,
+    animal_id INT,
+    date_of_visite DATE,
+    PRIMARY KEY (vet_id, animal_id)
+);
+
 
 
 
