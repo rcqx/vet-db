@@ -110,6 +110,33 @@ INSERT INTO specializations(vet_id, species_id) VALUES(4, 2);
 
 COMMIT;
 
+-- INSERT DATA IN VISITS TABLE
+ROLLBACK;
+BEGIN;
+
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (1, 5, '2020-05-24');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (3, 5, '2020-07-22');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (4, 6, '2021-02-02');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (2, 9, '2020-01-05');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (2, 9, '2020-03-08');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (2, 9, '2020-05-14');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (3, 7, '2021-05-04');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (4, 3, '2021-02-24');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (2, 1, '2019-12-21');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (1, 1, '2020-08-10');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (2, 1, '2021-04-07');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (3, 4, '2019-09-29');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (4, 2, '2020-10-03');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (4, 2, '2020-11-04');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (2, 8, '2019-01-24');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (2, 8, '2019-05-15');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (2, 8, '2020-02-27');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (2, 8, '2020-08-03');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (3, 10, '2020-05-24');
+INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (1, 10, '2021-01-11');
+
+COMMIT;
+
 
 
 
