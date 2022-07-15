@@ -132,11 +132,12 @@ ORDER BY date_of_visit DESC
 LIMIT 1;
 
 -- How many different animals did Stephanie Mendez see?
-SELECT a.name, ve.name, v.date_of_visit
+SELECT ve.name, COUNT(*) AS different_animals_seen_by_vet
 FROM animals a 
 JOIN visits v ON a.id = v.animal_id
 JOIN vets ve ON v.vet_id = ve.id
-WHERE ve.name = 'Stephanie Mendez';
+WHERE ve.name = 'Stephanie Mendez'
+GROUP BY ve.name;
 
 -- List all vets and their specialties, including vets with no specialties.
 SELECT ve.name AS VetName, sp.name AS specialization
@@ -188,7 +189,7 @@ LIMIT 1;
 
 -- How many visits were with a vet that did not specialize 
 -- in that animal's species?
-SELECT a.name as Pet_name, ve.name as Vet_Name, s.name AS vet_specialization
+SELECT COUNT(*) AS Times_vet_did_not_specialized_in_animal_species
 FROM visits v
 JOIN vets ve ON v.vet_id = ve.id
 JOIN animals a ON v.animal_id = a.id

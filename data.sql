@@ -111,7 +111,7 @@ INSERT INTO specializations(vet_id, species_id) VALUES(4, 2);
 COMMIT;
 
 -- INSERT DATA IN VISITS TABLE
-ROLLBACK;
+
 BEGIN;
 
 INSERT INTO visits(vet_id, animal_id, date_of_visit) VALUES (1, 5, '2020-05-24');
