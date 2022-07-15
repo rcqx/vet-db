@@ -1,4 +1,4 @@
-# A vet clinic database: Querying multiple tables 💾
+# A vet clinic database: Add "join table" for visits 💾
 
 > Creating a database for a vet clinic
 
