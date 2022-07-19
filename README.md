@@ -1,6 +1,6 @@
-# A vet clinic database: Add "join table" for visits 💾
+# A vet clinic database: Database Performance Audit 💾
 
-> Creating a database for a vet clinic
+> Checking and optimizing a database for a vet clinic
 
 ## Getting Started
 
