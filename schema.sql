@@ -110,3 +110,30 @@ insert into owners (full_name, email) select 'Owner ' || generate_series(1,25000
 COMMIT;
 
 
+-- To optimize query one I changed the index of the table, I added a primary key that consideres animal_id and id all togueter
+-- To do that I modify visits schema by:
+
+-- 1. Add id column to table
+ROLLBACK;
+BEGIN;
+
+ALTER TABLE visits 
+DROP CONSTRAINT visits_pkey;
+
+ALTER TABLE visits ADD COLUMN id SERIAL;
+
+ALTER TABLE visits ADD PRIMARY KEY (id);
+
+SELECT * FROM visits;
+
+-- 2. RESET PRIMARY KEY values in table 
+ALTER TABLE visits DROP CONSTRAINT visits_pkey; -- which originally was for (animal_id, vet_id)
+
+-- 3. ADD a new PRIMARY KEY consider paired values animal_id + id
+ALTER TABLE visits ADD PRIMARY KEY (animal_id, id);
+
+-- By doing so, query gets solved in 0.36secs~~ more or less instead of 1.12secs~~
+-- explain analyze SELECT COUNT(*) FROM visits WHERE animal_id = 4;
+
+
+
