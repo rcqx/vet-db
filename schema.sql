@@ -141,4 +141,8 @@ ALTER TABLE visits ADD PRIMARY KEY (animal_id, id);
 CREATE INDEX vet_id_idx ON visits (vet_id);
 
 
+-- To optimize 3rd query I created and index for each email as emails are unique and can be indexed
+-- time went from 1.1 secs to 0.06 sec roughly speaking
+CREATE INDEX email_idx ON owners (email);
+
 
