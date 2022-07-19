@@ -1,4 +1,4 @@
-# A vet clinic database: Database Performance Audit 💾
+# A vet clinic database: ERD diagram 💾
 
 > Checking and optimizing a database for a vet clinic
 
