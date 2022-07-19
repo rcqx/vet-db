@@ -136,4 +136,9 @@ ALTER TABLE visits ADD PRIMARY KEY (animal_id, id);
 -- explain analyze SELECT COUNT(*) FROM visits WHERE animal_id = 4;
 
 
+-- To optimize 2nd query I now tried to create and index for vet_id on visits table
+-- time went from 2 seconds to 1 sec roughly speaking
+CREATE INDEX vet_id_idx ON visits (vet_id);
+
+
 
